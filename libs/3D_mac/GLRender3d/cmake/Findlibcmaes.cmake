@@ -1,0 +1,43 @@
+find_path( LIBCMAES_INCLUDE_DIR cmaes.h
+ PATHS
+
+ ENV LIBCMAES_ROOT
+ ENV LIBCMAES_INCLUDE_DIR
+ ${LIBCMAES_ROOT}
+ /usr/local/include/libcmaes
+PATH_SUFFIXES
+ include
+)
+
+find_library(LIBCMAES_LIBRARY
+  NAMES
+    libcmaes
+  PATHS
+    ENV LIBCMAES_ROOT
+    ENV LIBCMAES_LIB_DIR
+    ${GMP_ROOT}
+    /usr/local/include/libcmaes
+  PATH_SUFFIXES
+    lib
+  )
+
+mark_as_advanced(
+  LIBCMAES_INCLUDE_DIR
+  LIBCMAES_LIBRARY
+  )
+
+include(FindPackageHandleStandardArgs)
+find_package_handle_standard_args(LIBCMAES
+  REQUIRED_VARS
+    LIBCMAES_INCLUDE_DIR
+    LIBCMAES_LIBRARY
+  )
+
+if(LIBCMAES_FOUND AND NOT TARGET LIBCMAES::LIBCMAES)
+  add_library(LIBCMAES::LIBCMAES UNKNOWN IMPORTED)
+  set_target_properties(LIBCMAES::LIBCMAES PROPERTIES
+    IMPORTED_LINK_INTERFACE_LANGUAGES ["C"|"CXX"] 
+    IMPORTED_LOCATION "${LIBCMAES_LIBRARY}"
+    INTERFACE_INCLUDE_DIRECTORIES "${LIBCMAES_INCLUDE_DIR}"
+    )
+endif()

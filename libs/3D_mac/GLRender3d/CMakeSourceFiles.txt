@@ -1,0 +1,11 @@
+set( Sources
+  main.cpp
+  ObjGL.cpp
+  FluidMat.cpp
+)
+
+set( Headers
+  main.h
+  ObjGL.h
+  FluidMat.h
+)

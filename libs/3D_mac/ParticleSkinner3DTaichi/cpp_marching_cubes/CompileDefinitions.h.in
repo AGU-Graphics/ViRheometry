@@ -1,0 +1,13 @@
+#ifndef COMPILE_DEFINITIONS_H
+#define COMPILE_DEFINITIONS_H
+
+namespace CompileDefinitions
+{
+  constexpr char GitSHA1[] = "@GIT_SHA1@";
+  constexpr char BuildMode[] = "@CMAKE_BUILD_TYPE@";
+  constexpr char CCompiler[] = "@CMAKE_C_COMPILER@";
+  constexpr char CXXCompiler[] = "@CMAKE_CXX_COMPILER@";
+  constexpr char BuildDateTime[] = "@BUILD_DATE_TIME@";
+}
+
+#endif

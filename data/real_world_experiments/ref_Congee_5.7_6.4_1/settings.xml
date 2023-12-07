@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<Optimizer>
+  <path
+    root_dir_path="../data/Congee_1"
+    GL_render_path="../libs/3D/GLRender3d/build/GLRender3d"
+    mpm_path="../libs/3D/MPM3d/AGTaichiMPM.py"
+    particle_skinner_path="../libs/ParticleSkinner3DTaichi.py"
+    shell_script_dir_path="../libs/3D/shellScript3d"
+    GL_emulation_render_path="../libs/3D/GLEmulationRender3d/build/GLEmulationRender3d"
+  />
+
+  <setup
+    RHO="1.025"
+    H="5.7"
+    W="6.4"
+  />
+    
+  <cuboid min="-0.150000 -0.150000 -0.150000" max="6.400000 5.700000 4.150000" density="1.0" cell_samples_per_dim="2" vel="0.0 0.0 0.0" omega="0.0 0.0 0.0" />
+  <static_box min="-100.000000 -1.000000 -100.000000" max="100.000000 0.000000 100.000000" boundary_behavior="sticking"/>
+  <static_box min="-1.000000 0.000000 0.000000" max="0.000000 20.000000 4.000000" boundary_behavior="sticking"/>
+  <static_box min="-1.000000 0.000000 -0.300000" max="6.400000 20.000000 0.000000" boundary_behavior="sticking"/>
+  <static_box min="-1.000000 0.000000 4.000000" max="6.400000 20.000000 4.300000" boundary_behavior="sticking"/>
+</Optimizer>
